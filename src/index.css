@@ -15,6 +15,11 @@
     margin: 0;
   }
   
+  html, body, #root {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
   body {
     background: #FAF9F6;
     -webkit-print-color-adjust: exact;
@@ -25,10 +30,16 @@
     display: none !important;
   }
 
+  /* Reset layout constraints for printing */
+  .min-h-screen, .h-screen, .overflow-hidden, .overflow-y-auto {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
   .print-area {
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: static !important;
     width: 100%;
     margin: 0 !important;
     padding: 0 !important;
