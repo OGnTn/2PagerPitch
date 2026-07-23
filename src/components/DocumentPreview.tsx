@@ -4,9 +4,8 @@ export function DocumentPreview({ data }: { data: FormState }) {
   return (
     <div className="space-y-8 print:space-y-0 pb-12 print:pb-0 font-serif text-[#1A1A1A]">
       {/* Page 1 */}
-      <div className="a4-page print:a4-page bg-[#FAF9F6]">
-        <div className="h-full flex flex-col">
-            <header className="flex justify-between items-baseline mb-8 border-b border-[#1A1A1A] pb-4">
+      <div className="a4-page print:a4-page bg-[#FAF9F6] flex flex-col">
+            <header className="flex justify-between items-baseline mb-8 border-b border-[#1A1A1A] pb-4 shrink-0">
                 <div className="flex flex-col">
                     <span className="text-[10px] uppercase tracking-[0.3em] font-sans font-bold opacity-60 mb-1">{data.headerEyebrowLeft}</span>
                     <h1 className="text-4xl italic font-serif">{data.gameName || 'Project Name'}</h1>
@@ -42,20 +41,18 @@ export function DocumentPreview({ data }: { data: FormState }) {
 
                 {/* Main cover image on page 1 */}
                 {data.images.length > 0 && (
-                    <section className="mt-auto pt-6 flex-1 flex flex-col min-h-[250px]">
+                    <section className="mt-auto pt-6 flex-1 flex flex-col min-h-0">
                         <div className="w-full flex-1 relative border border-[#1A1A1A] p-2 bg-[#E5E2DD] flex flex-col min-h-0">
-                            <img src={data.images[0]} alt="Visual 1" className="w-full flex-1 object-cover min-h-0" />
+                            <img src={data.images[0]} alt="Visual 1" className="w-full h-full object-cover min-h-0 absolute inset-0 p-2" />
                         </div>
                     </section>
                 )}
             </main>
-        </div>
       </div>
 
       {/* Page 2 */}
-      <div className="a4-page print:a4-page bg-[#FAF9F6]">
-        <div className="h-full flex flex-col">
-            <header className="flex justify-between items-baseline mb-8 border-b border-[#1A1A1A] pb-4">
+      <div className="a4-page print:a4-page bg-[#FAF9F6] flex flex-col">
+            <header className="flex justify-between items-baseline mb-8 border-b border-[#1A1A1A] pb-4 shrink-0">
                 <h1 className="text-2xl italic font-serif">{data.gameName || 'Project Name'} <span className="text-lg font-sans not-italic text-[#7A7067] ml-2 tracking-widest uppercase">{data.page2HeaderSuffix}</span></h1>
                  <div className="w-12 h-12 rounded-full border border-[#1A1A1A] flex items-center justify-center text-[10px] font-sans font-bold tracking-tighter text-center whitespace-pre-wrap leading-tight">{data.page2NumberInfo}</div>
             </header>
@@ -179,7 +176,6 @@ export function DocumentPreview({ data }: { data: FormState }) {
                     </section>
                 )}
             </main>
-        </div>
       </div>
     </div>
   );
