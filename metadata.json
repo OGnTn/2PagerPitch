@@ -1,0 +1,6 @@
+{
+  "name": "Pitch Deck Generator",
+  "description": "A tool to generate a professional 2-page PDF pitch document for games, tailored for funding intakes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

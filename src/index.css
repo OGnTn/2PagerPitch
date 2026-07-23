@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@layer components {
+  .a4-page {
+    @apply bg-[#FAF9F6] text-[#1A1A1A] font-serif w-full mx-auto relative shadow-xl ring-1 ring-gray-900/5;
+    max-width: 210mm;
+    min-height: 297mm;
+    padding: 2.5rem;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  
+  body {
+    background: #FAF9F6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print, .no-print * {
+    display: none !important;
+  }
+
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #FAF9F6;
+  }
+
+  .a4-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 2.5rem !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    page-break-after: always;
+  }
+  
+  .a4-page:last-child {
+    page-break-after: auto;
+  }
+}
