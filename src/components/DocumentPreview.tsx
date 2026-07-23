@@ -42,9 +42,9 @@ export function DocumentPreview({ data }: { data: FormState }) {
 
                 {/* Main cover image on page 1 */}
                 {data.images.length > 0 && (
-                    <section className="mt-auto pt-6 flex-1 flex flex-col justify-end min-h-[250px]">
-                        <div className="w-full h-full relative border border-[#1A1A1A] p-2 bg-[#E5E2DD]">
-                            <img src={data.images[0]} alt="Visual 1" className="w-full h-full object-cover" />
+                    <section className="mt-auto pt-6 flex-1 flex flex-col min-h-[250px]">
+                        <div className="w-full flex-1 relative border border-[#1A1A1A] p-2 bg-[#E5E2DD] flex flex-col min-h-0">
+                            <img src={data.images[0]} alt="Visual 1" className="w-full flex-1 object-cover min-h-0" />
                         </div>
                     </section>
                 )}
